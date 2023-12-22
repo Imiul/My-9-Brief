@@ -7,13 +7,15 @@ CREATE TABLE client (
     lastName VARCHAR(40) NOT NULL,
     cnie VARCHAR(40) NOT NULL,
     address VARCHAR(40) NOT NULL,
-    date DATE NOT NULL
+    date DATE NOT NULL,
+    softDelete TIMESTAMP NULL
 );
 
 CREATE TABLE insurer (
     id INT(40) PRIMARY KEY NOT NULL,
     name VARCHAR(40) NOT NULL,
-    address VARCHAR(40) NOT NULL
+    address VARCHAR(40) NOT NULL,
+    softDelete TIMESTAMP NULL
 );
 
 CREATE TABLE article (
@@ -23,8 +25,9 @@ CREATE TABLE article (
     date VARCHAR(40) NOT NULL,
     insurerId INT NOT NULL,
     clientId INT NOT NULL,
-    FOREIGN KEY (insurerId) REFERENCES insurer(id),
-    FOREIGN KEY (clientId) REFERENCES client(id)
+    FOREIGN KEY (insurerId) REFERENCES insurer(id) ON DELETE CASCADE,
+    FOREIGN KEY (clientId) REFERENCES client(id) ON DELETE CASCADE,
+    softDelete TIMESTAMP NULL
 );
 
 CREATE TABLE claim (
@@ -32,7 +35,8 @@ CREATE TABLE claim (
     description VARCHAR(40) NOT NULL,
     date VARCHAR(40) NOT NULL,
     articleId INT NOT NULL,
-    FOREIGN KEY (articleId) REFERENCES article(id)
+    FOREIGN KEY (articleId) REFERENCES article(id) ON DELETE CASCADE,
+    softDelete TIMESTAMP NULL
 );
 
 CREATE TABLE premium (
@@ -40,5 +44,6 @@ CREATE TABLE premium (
     amount VARCHAR(40) NOT NULL,
     date VARCHAR(40) NOT NULL,
     claimId INT NOT NULL,
-    FOREIGN KEY (claimId) REFERENCES claim(id)
+    FOREIGN KEY (claimId) REFERENCES claim(id) ON DELETE CASCADE,
+    softDelete TIMESTAMP NULL
 );
