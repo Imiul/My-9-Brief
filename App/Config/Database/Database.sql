@@ -22,7 +22,7 @@ CREATE TABLE article (
     id INT(40) PRIMARY KEY NOT NULL,
     title VARCHAR(40) NOT NULL,
     description VARCHAR(40) NOT NULL,
-    date VARCHAR(40) NOT NULL,
+    date DATE NOT NULL,
     insurerId INT NOT NULL,
     clientId INT NOT NULL,
     FOREIGN KEY (insurerId) REFERENCES insurer(id) ON DELETE CASCADE,
@@ -33,7 +33,7 @@ CREATE TABLE article (
 CREATE TABLE claim (
     id INT(40) PRIMARY KEY NOT NULL,
     description VARCHAR(40) NOT NULL,
-    date VARCHAR(40) NOT NULL,
+    date DATE NOT NULL,
     articleId INT NOT NULL,
     FOREIGN KEY (articleId) REFERENCES article(id) ON DELETE CASCADE,
     softDelete TIMESTAMP NULL
@@ -42,7 +42,7 @@ CREATE TABLE claim (
 CREATE TABLE premium (
     id INT(40) PRIMARY KEY NOT NULL,
     amount VARCHAR(40) NOT NULL,
-    date VARCHAR(40) NOT NULL,
+    date DATE NOT NULL,
     claimId INT NOT NULL,
     FOREIGN KEY (claimId) REFERENCES claim(id) ON DELETE CASCADE,
     softDelete TIMESTAMP NULL
