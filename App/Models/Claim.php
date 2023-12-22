@@ -1,6 +1,6 @@
 <?php
 
-    class Article {
+    class Claim {
 
         public $id;
         public $description;

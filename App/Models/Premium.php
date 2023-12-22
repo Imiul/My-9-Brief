@@ -1,6 +1,6 @@
 <?php
 
-    class Article {
+    class Premium {
 
         public $id;
         public $amount;
