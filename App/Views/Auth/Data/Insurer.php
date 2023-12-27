@@ -1,5 +1,5 @@
 <?php
-
+    
     $pageTitle = "Home Page - Insurance";
     $pageDescription = "Insurance System";
     $pageKeywords = " ** ";
@@ -9,6 +9,7 @@
 
     include(__DIR__ . "/../../Layouts/Head.php");
 
+    require_once(__DIR__."/../../../Controllers/Log-out.php");
     require_once(__DIR__."/../../../Controllers/Insurer.php");
 ?>
 
@@ -60,6 +61,7 @@
                     
                     <form method="POST" class="w-full" enctype="multipart/form-data" >
                         <input type="text" name="name" placeholder="INsurer Name" class="w-full mb-2 p-2 border-2 border-gray-600 rounded">
+                        <input type="password" name="password" placeholder="Password" class="w-full mb-2 p-2 border-2 border-gray-600 rounded">
                         <input type="text" name="address" placeholder="Insurer Address" class="w-full mb-2 p-2 border-2 border-gray-600 rounded">
                         <input type="file" name="picture" class="w-full mb-2 p-2 border-2 border-gray-600 rounded">
 

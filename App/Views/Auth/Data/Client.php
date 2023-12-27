@@ -1,5 +1,6 @@
 <?php
 
+
     $pageTitle = "Home Page - Insurance";
     $pageDescription = "Insurance System";
     $pageKeywords = " ** ";
@@ -8,6 +9,8 @@
     $SpecialTitle = "Client";
 
     include(__DIR__ . "/../../Layouts/Head.php");
+
+    require_once(__DIR__."/../../../Controllers/Log-out.php");
     require_once(__DIR__."/../../../Controllers/Client.php");
 ?>
 

@@ -9,12 +9,15 @@
         $name = $_POST['name'];
         $address = $_POST['address'];
         $pic = $_FILES['picture']["name"];
+        $password = $_POST['password'];
 
-        if (empty($pic) || empty($address) || empty($name)) {
+
+        if (empty($pic) || empty($address) || empty($name) || empty($password) ) {
             echo "<script>window.alert('Inputs should not be empty !');</script>";
         } else {
 
             $id = time();
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
             $tmpFile = $_FILES["picture"]["tmp_name"];
             $newFile = __DIR__. '/../Views/Layouts/Img/Insurer/'.$_FILES["picture"]["name"];
@@ -25,7 +28,7 @@
                 echo "ERROR UPLOADING IMAGE TO FOLDER"  . $e->getMessage();            
             }
 
-            $insurer = new Insurer($id, $pic, $name, $address);
+            $insurer = new Insurer($id, $pic, $name, $address, $hashedPassword);
             $iService = new ServiceInsurer();
             $iService->insert($insurer);
 

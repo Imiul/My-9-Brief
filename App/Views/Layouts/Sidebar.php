@@ -39,7 +39,7 @@
         </li>
 
         <li class="my-2" >
-            <a href="" class="bg-[#ef233c] h-10 w-[50%] sm:w-full flex items-center rounded p-5 text-[#fff] hover:bg-[#ff8fab] font-bold m-auto mt-10">
+            <a href="?logOut" class="bg-[#ef233c] h-10 w-[50%] sm:w-full flex items-center rounded p-5 text-[#fff] hover:bg-[#ff8fab] font-bold m-auto mt-10">
                 <img class="h-6 sm:w-6 w-full" src="/Public/Assets/Img/shutdown.png" alt="" > 
                 <span class="hidden sm:inline-block pl-4">LOG OUT</span>
             </a>

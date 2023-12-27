@@ -10,6 +10,7 @@
         "/Login" => loadView("Auth/Act/Login"),
         "/Register" => loadView("Auth/Act/Register"),
         "/Resetpassword" => loadView("Auth/Act/Reset-password"),
+        "/logOut" => loadView("Auth/Act/log-out"),
         
         "/Insurers" => loadView("Auth/Data/Insurer"),
         "/Clients" => loadView("Auth/Data/Client"),

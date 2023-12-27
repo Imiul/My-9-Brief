@@ -7,6 +7,8 @@
         function delete($id);
         function display();
 
+        function authentificate($name, $password);
+
     }
 
 ?>
