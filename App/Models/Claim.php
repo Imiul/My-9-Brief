@@ -4,18 +4,17 @@
 
         public $id;
         public $description;
+        public $pic;
         public $date;
         public $articleId;
-        public $softDelete;
 
-        public function __construct($id, $title, $description, $date, $articleId, $softDelete)
+        public function __construct($id, $pic, $description, $date, $articleId)
         {
             $this->id = $id;
-            $this->title = $title;
+            $this->pic = $pic;
             $this->description = $description;
             $this->date = $date;
             $this->articleId = $articleId;
-            $this->softDelete = $softDelete;
         }
 
         public function getId() 
@@ -23,9 +22,9 @@
             return $this->id;
         }
 
-        public function getTitle() 
+        public function getPic() 
         {
-            return $this->title;
+            return $this->pic;
         }
 
         public function getDescription() 
@@ -41,11 +40,6 @@
         public function getArticleId() 
         {
             return $this->articleId;
-        }
-
-        public function getSoftDelete() 
-        {
-            return $this->softDelete;
         }
 
     }

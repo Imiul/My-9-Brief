@@ -8,9 +8,8 @@
         public $date;
         public $insurerId;
         public $clientId;
-        public $softDelete;
 
-        public function __construct($id, $title, $description, $date, $insurerId, $clientId, $softDelete)
+        public function __construct($id, $title, $description, $date, $insurerId, $clientId)
         {
             $this->id = $id;
             $this->title = $title;
@@ -18,7 +17,6 @@
             $this->date = $date;
             $this->insurerId = $insurerId;
             $this->clientId = $clientId;
-            $this->softDelete = $softDelete;
         }
 
         public function getId() 
@@ -51,11 +49,6 @@
             return $this->clientId;
         }
 
-        public function getSoftDelete() 
-        {
-            return $this->softDelete;
-        }
-        
     }
 
 ?>

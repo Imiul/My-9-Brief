@@ -3,27 +3,32 @@
     class Client {
 
         public $id;
+        public $pic;
         public $firstName;
         public $lastName;
         public $cnie;
         public $address;
         public $date;
-        protected $softDelete;
 
-        public function __construct($id, $firstName, $lastName, $cnie, $address, $date, $softDelete)
+        public function __construct($id, $pic, $firstName, $lastName, $cnie, $address, $date)
         {
             $this->id = $id;
+            $this->pic = $pic;
             $this->firstName = $firstName;
             $this->lastName = $lastName;
             $this->cnie = $cnie;
             $this->address = $address;
             $this->date = $date;
-            $this->softDelete = $softDelete;
         }
 
         public function getId() 
         {
             return $this->id;
+        }
+
+        public function getPic() 
+        {
+            return $this->pic;
         }
 
         public function getFirstName() 
@@ -49,11 +54,6 @@
         public function getDate() 
         {
             return $this->date;
-        }
-
-        public function getSoftDelete() 
-        {
-            return $this->softDelete;
         }
 
     }

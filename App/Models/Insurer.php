@@ -5,19 +5,24 @@
         public $id;
         public $name;
         public $address;
-        public $softDelete;
+        public $pic;
 
-        public function __construct($id, $name, $address, $softDelete)
+        public function __construct($id, $pic, $name, $address)
         {
             $this->id = $id;
+            $this->pic = $pic;
             $this->name = $name;
             $this->address = $address;
-            $this->softDelete = $softDelete;
         }
 
         public function getId() 
         {
             return $this->id;
+        }
+
+        public function getPic() 
+        {
+            return $this->pic;
         }
 
         public function getName() 
@@ -28,11 +33,6 @@
         public function getAddress() 
         {
             return $this->address;
-        }
-
-        public function getSoftDelete() 
-        {
-            return $this->softDelete;
         }
 
     }

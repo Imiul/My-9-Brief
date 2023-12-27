@@ -1,6 +1,6 @@
 <?php
 
-    require_once("../Config/Configuration.php");
+    require_once(__DIR__ . "/../Config/Configuration.php");
 
     class Database {
 
@@ -10,7 +10,6 @@
         {
             try {
                 $pdo = new PDO(Dns, UserName, Password);
-                echo "<script>console.log('Connected Succesfully');</script>";
                 return $pdo;
                 
             } catch (PDOException $e) {

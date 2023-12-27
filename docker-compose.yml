@@ -1,6 +1,6 @@
 version: '3'
 services:
-  env:
+  apache:
     container_name: apache
     build:
       context: .
@@ -8,10 +8,12 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./App/Views:/var/www/html
+      - ./:/var/www/html
     depends_on:
       - mysql
-    
+    networks:
+      - bank
+
   mysql:
     image: mysql:latest
     container_name: mysql
@@ -21,11 +23,12 @@ services:
       MYSQL_ROOT_PASSWORD: '${MYSQL_PASSWORD}'
       MYSQL_PASSWORD: '${MYSQL_PASSWORD}'
       MYSQL_DATABASE: '${MYSQL_DATABASE}'
-    volumes:
-      - ./App/Config/Database:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
-
+    volumes: 
+      - ./App/Config/Database:/docker-entrypoint-initdb.d
+    networks:
+      - bank
 
   phpmyadmin:
     image: phpmyadmin:latest
@@ -36,3 +39,9 @@ services:
     environment:
       - PMA_HOST=mysql
       - PMA_PORT=3306
+    networks:
+      - bank
+
+networks:
+  bank:
+    driver: bridge

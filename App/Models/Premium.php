@@ -6,15 +6,13 @@
         public $amount;
         public $date;
         public $claimId;
-        public $softDelete;
 
-        public function __construct($id, $amount, $date, $claimId, $softDelete)
+        public function __construct($id, $amount, $date, $claimId)
         {
             $this->id = $id;
             $this->amount = $amount;
             $this->date = $date;
             $this->claimId = $claimId;
-            $this->softDelete = $softDelete;
         }
 
         public function getId() 
@@ -35,11 +33,6 @@
         public function getClaimId() 
         {
             return $this->claimId;
-        }
-
-        public function getSoftDelete() 
-        {
-            return $this->softDelete;
         }
 
     }

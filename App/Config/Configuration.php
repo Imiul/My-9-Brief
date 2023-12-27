@@ -8,6 +8,6 @@
     define("UserName", "docker");
     define("Password", "root");
 
-    define("Dns", "mysql:host='". Host ."';port='". Port ."';dbname='". Db ."';charset=utf8");
+    define("Dns", "mysql:host=". Host .";port=". Port .";dbname=". Db .";charset=utf8");
 
 ?>
